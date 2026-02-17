@@ -31,6 +31,14 @@ in {
         '';
       };
 
+      fontPath = mkOption {
+        type = types.str;
+        default = "${pkgs.corefonts}/share/fonts/truetype/Impact.ttf";
+        description = ''
+          Path to the font file to use for images.
+        '';
+      };
+
       logLevel = mkOption {
         type = types.str;
         default = "debug";
@@ -80,6 +88,7 @@ in {
       environment = {
         BIND_ADDRESS = "127.0.0.1:${builtins.toString cfg.port}";
         DATA_PATH = "/var/lib/quick-meme-gif/";
+        FONT_PATH = cfg.fontPath;
         RUST_LOG = cfg.logLevel;
         RUST_BACKTRACE = "1";
       };
