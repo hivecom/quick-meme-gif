@@ -1,0 +1,29 @@
+[package]
+name = "quick-meme-gif"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+dotenv = "0.15.0"
+time = "0.3.41"
+
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+
+anyhow = "1.0.98"
+thiserror = "2.0.12"
+
+axum = { version = "0.8.4", features = ["macros", "multipart"] }
+axum-extra = { version = "0.10.1", features = ["typed-header"] }
+tokio = { version = "1.45.1", features = ["rt", "macros", "rt-multi-thread", "fs"] }
+tower-http = { version = "0.6.6", features = ["trace", "cors", "fs"] }
+tracing = "0.1.41"
+tracing-subscriber = "0.3.19"
+
+sha2 = "0.10.9"
+data-encoding = "2.9.0"
+tower = "0.5.2"
+
+text_on_image = "0.1.0"
+image = "0.24.9"
+rusttype = "0.9.3"
